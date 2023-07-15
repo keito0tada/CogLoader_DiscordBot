@@ -1,6 +1,6 @@
-[submodule "cog/Weather_DiscordBot"]
-	path = cog/Weather_DiscordBot
-	url = git@github.com:keito0tada/Weather_DiscordBot.git
 [submodule "cog/Progress_DiscordBot"]
 	path = cog/Progress_DiscordBot
-	url = git@github.com:keito0tada/Progress_DiscordBot.git
+	url = https://github.com/keito0tada/Progress_DiscordBot.git
+[submodule "cog/Weather_DiscordBot"]
+	path = cog/Weather_DiscordBot
+	url = https://github.com/keito0tada/Weather_DiscordBot.git
