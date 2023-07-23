@@ -3,7 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cog/Progress_DiscordBot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cog/Progress_DiscordBot/source/UtilityClasses_DiscordBot" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cog/Weather_DiscordBot" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cog/Weather_DiscordBot/UtilityClasses_DiscordBot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cog/Weather_DiscordBot/source/UtilityClasses_DiscordBot" vcs="Git" />
   </component>
 </project>
