@@ -18,6 +18,7 @@ async def load_extensions():
 @bot.event
 async def on_ready():
     await load_extensions()
+    await bot.tree.sync()
 
 
 bot.run(DISCORD_BOT_TOKEN)
