@@ -4,3 +4,6 @@
 [submodule "cog/Weather_DiscordBot"]
 	path = cog/Weather_DiscordBot
 	url = https://github.com/keito0tada/Weather_DiscordBot.git
+[submodule "cog/Essential_DiscordBot"]
+	path = cog/Essential_DiscordBot
+	url = https://github.com/keito0tada/Essential_DiscordBot.git

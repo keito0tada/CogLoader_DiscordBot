@@ -13,6 +13,10 @@ async def load_extensions():
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
         print('cog "{0}" loaded.'.format(extension_name))
+    for name in glob.glob('cog/?*/src/main.py'):
+        extension_name = name[:len(name) - 3].replace('/', '.')
+        await bot.load_extension(name=extension_name)
+        print('cog "{0}" loaded.'.format(extension_name))
 
 
 @bot.event
