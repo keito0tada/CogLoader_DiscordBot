@@ -1,11 +1,21 @@
 import discord
+import psycopg2
 from discord.ext import commands
 import os
-from typing import final
+from typing import Final
 import glob
 
-DISCORD_BOT_TOKEN: final(str) = os.getenv('DISCORD_BOT_TOKEN')
-bot = commands.Bot(command_prefix='/', intents=discord.Intents.all())
+DISCORD_BOT_TOKEN: Final[str] = os.getenv('DISCORD_BOT_TOKEN')
+DATABASE_URL: Final[str] = os.getenv('DATABASE_URL')
+
+
+class Bot(commands.Bot):
+    def __init__(self, command_prefix: str, intents: discord.Intents):
+        super().__init__(command_prefix=command_prefix, intents=intents)
+        self.database_connector = psycopg2.connect(DATABASE_URL)
+
+
+bot = Bot(command_prefix='/', intents=discord.Intents.all())
 
 
 async def load_extensions():

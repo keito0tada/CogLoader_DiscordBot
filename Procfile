@@ -1,1 +1,1 @@
-discordbot: python3 cogloader.py
+discordbot: python3 main.py

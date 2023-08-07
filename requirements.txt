@@ -2,3 +2,5 @@ discord
 psycopg2
 lark
 aiohttp
+xmltodict
+dicttoxml
