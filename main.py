@@ -16,9 +16,6 @@ class Bot(commands.Bot):
     
 bot = Bot(command_prefix='/', intents=discord.Intents.all())
 
-@bot.event
-async def on_ready():
-    await bot.get_channel(1030336853724901406).send('ready')
 
 
 async def load_extensions():
@@ -36,6 +33,9 @@ async def load_extensions():
 
 @bot.event
 async def on_ready():
+    sys.stdout.write('ready')
+    sys.stderr.write('error')
+    await bot.get_channel(1030336853724901406).send('ready')
     await load_extensions()
     await bot.tree.sync()
 
