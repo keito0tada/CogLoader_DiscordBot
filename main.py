@@ -4,6 +4,7 @@ from discord.ext import commands
 import os, sys
 from typing import Final
 import glob
+import logging
 
 DISCORD_BOT_TOKEN: Final[str] = os.getenv('DISCORD_BOT_TOKEN')
 DATABASE_URL: Final[str] = os.getenv('DATABASE_URL')
@@ -21,6 +22,8 @@ bot = Bot(command_prefix='/', intents=discord.Intents.all())
 async def load_extensions():
     sys.stdout.writelines('load extensions')
     sys.stdout.flush()
+    logging.info('info')
+    logging.debug('debug')
     for name in glob.glob('cog/?*/source/main.py'):
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
@@ -37,6 +40,8 @@ async def load_extensions():
 async def on_ready():
     sys.stdout.writelines('discord bot ready')
     sys.stdout.flush()
+    logging.info('info')
+    logging.debug('debug')
     await load_extensions()
     await bot.tree.sync()
 
