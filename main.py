@@ -1,7 +1,7 @@
 import discord
 import psycopg2
 from discord.ext import commands
-import os
+import os, sys
 from typing import Final
 import glob
 
@@ -23,10 +23,12 @@ async def load_extensions():
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
         print('cog "{0}" loaded.'.format(extension_name))
+        sys.stdout.flush()
     for name in glob.glob('cog/?*/src/main.py'):
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
         print('cog "{0}" loaded.'.format(extension_name))
+        sys.stdout.flush()
 
 
 @bot.event
