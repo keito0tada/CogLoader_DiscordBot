@@ -22,20 +22,16 @@ async def load_extensions():
     for name in glob.glob('cog/?*/source/main.py'):
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
-        print('cog "{0}" loaded.'.format(extension_name))
-        sys.stdout.flush()
+        sys.stdout.writelines('cog "{0}" loaded.'.format(extension_name))
     for name in glob.glob('cog/?*/src/main.py'):
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
-        print('cog "{0}" loaded.'.format(extension_name))
-        sys.stdout.flush()
+        sys.stdout.writelines('cog "{0}" loaded.'.format(extension_name))
 
 
 @bot.event
 async def on_ready():
-    sys.stdout.write('ready')
-    sys.stderr.write('error')
-    await bot.get_channel(1030336853724901406).send('ready')
+    sys.stdout.writelines('discord bot ready')
     await load_extensions()
     await bot.tree.sync()
 
