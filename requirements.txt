@@ -4,3 +4,4 @@ lark
 aiohttp
 xmltodict
 dicttoxml
+gspread
