@@ -17,32 +17,24 @@ class Bot(commands.Bot):
     
 bot = Bot(command_prefix='/', intents=discord.Intents.all())
 
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
 async def load_extensions():
-    sys.stdout.writelines('load extensions')
-    sys.stdout.flush()
-    logging.info('info')
-    logging.debug('debug')
+    log.info('load extensions')
     for name in glob.glob('cog/?*/source/main.py'):
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
-        sys.stdout.writelines('cog "{0}" loaded.'.format(extension_name))
-        sys.stdout.flush()
+        log.info('cog "{0}" loaded.'.format(extension_name))
     for name in glob.glob('cog/?*/src/main.py'):
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
-        sys.stdout.writelines('cog "{0}" loaded.'.format(extension_name))
-        sys.stdout.flush()
+        log.info('cog "{0}" loaded.'.format(extension_name))
 
 
 @bot.event
 async def on_ready():
-    sys.stdout.writelines('discord bot ready')
-    sys.stdout.flush()
-    log.info('info')
-    logging.debug('debug')
+    log.info('on ready')
     await load_extensions()
     await bot.tree.sync()
 
