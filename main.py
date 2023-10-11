@@ -19,6 +19,7 @@ bot = Bot(command_prefix='/', intents=discord.Intents.all())
 
 
 async def load_extensions():
+    sys.stdout.writelines('load extensions')
     for name in glob.glob('cog/?*/source/main.py'):
         extension_name = name[:len(name) - 3].replace('/', '.')
         await bot.load_extension(name=extension_name)
