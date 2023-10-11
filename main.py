@@ -17,7 +17,8 @@ class Bot(commands.Bot):
     
 bot = Bot(command_prefix='/', intents=discord.Intents.all())
 
-
+logging.basicConfig(level=logging.DEBUG)
+log = logging.getLogger(__name__)
 
 async def load_extensions():
     sys.stdout.writelines('load extensions')
@@ -40,7 +41,7 @@ async def load_extensions():
 async def on_ready():
     sys.stdout.writelines('discord bot ready')
     sys.stdout.flush()
-    logging.info('info')
+    log.info('info')
     logging.debug('debug')
     await load_extensions()
     await bot.tree.sync()
