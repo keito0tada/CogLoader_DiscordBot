@@ -13,9 +13,12 @@ class Bot(commands.Bot):
     def __init__(self, command_prefix: str, intents: discord.Intents):
         super().__init__(command_prefix=command_prefix, intents=intents)
         self.database_connector = psycopg2.connect(DATABASE_URL)
-
-
+    
 bot = Bot(command_prefix='/', intents=discord.Intents.all())
+
+@bot.event
+async def on_ready():
+    await bot.get_channel(1030336853724901406).send('ready')
 
 
 async def load_extensions():
