@@ -7,3 +7,6 @@
 [submodule "cog/Essential_DiscordBot"]
 	path = cog/Essential_DiscordBot
 	url = https://github.com/keito0tada/Essential_DiscordBot.git
+[submodule "cog/IdolQuizDiscordBot"]
+	path = cog/IdolQuizDiscordBot
+	url = https://github.com/keito0tada/IdolQuizDiscordBot.git
