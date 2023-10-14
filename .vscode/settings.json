@@ -6,5 +6,5 @@
 		"editor.formatOnType": true,
 		"editor.wordBasedSuggestions": false
 	},
-    "python.analysis.typeCheckingMode": "strict"
+    "python.analysis.typeCheckingMode": "basic"
 }
